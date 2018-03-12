@@ -1,4 +1,6 @@
 package transaction;
+import java.sql.Timestamp;
+
 import javax.persistence.*;
 
 @Entity
@@ -29,13 +31,13 @@ public class UserAddress {
     private String createdBy;
     
     @Column(name = "created_date")
-    private String createdDate;
+    private Timestamp createdDate;
     
     @Column(name = "modified_by")
     private String modifiedBy;
     
     @Column(name = "modified_date")
-    private String modifiedDate;
+    private Timestamp modifiedDate;
     
 
 	public long getAddressId() {
@@ -104,10 +106,10 @@ public class UserAddress {
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
-	public String getCreatedDate() {
+	public Timestamp getCreatedDate() {
 		return createdDate;
 	}
-	public void setCreatedDate(String createdDate) {
+	public void setCreatedDate(Timestamp createdDate) {
 		this.createdDate = createdDate;
 	}
 	public String getModifiedBy() {
@@ -116,11 +118,19 @@ public class UserAddress {
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
-	public String getModifiedDate() {
+	public Timestamp getModifiedDate() {
 		return modifiedDate;
 	}
-	public void setModifiedDate(String modifiedDate) {
+	public void setModifiedDate(Timestamp modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
+	@Override
+	public String toString() {
+		return "UserAddress [addressId=" + addressId + ", userId=" + userId + ", firstName=" + firstName + ", lastName="
+				+ lastName + ", line1=" + line1 + ", line2=" + line2 + ", city=" + city + ", state=" + state + ", zip="
+				+ zip + ", country=" + country + ", createdBy=" + createdBy + ", createdDate=" + createdDate
+				+ ", modifiedBy=" + modifiedBy + ", modifiedDate=" + modifiedDate + "]";
+	}
     
+	
 }
